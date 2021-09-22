@@ -16,7 +16,7 @@ function geraDoc() {
             return null
         }
         var arquivo = "assets/word/"
-        if (parcela == 1) arquivo += "rel1.docx"
+        if (parcela == 1) arquivo += "Rel1.docx"
         else arquivo += "Rel.docx"
         dts = datas(periodoMensal)
     }
