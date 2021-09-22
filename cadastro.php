@@ -87,7 +87,7 @@
       $('#anoEntrada').mask('0000')
       $('#nascimento').mask('00/00/0000')
       $('#edital').mask('000')
-      $('#bolsa').mask('000')
+      $('#bolsa').mask('0000')
       $('#proc').mask('0000')
       $('#vigencia').mask('00/00/0000 a 00/00/0000')
       $('#ch').mask('000')
