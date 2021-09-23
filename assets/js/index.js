@@ -165,7 +165,6 @@ function datas(s) {
     let sep = s.split(' ')
     inicio = sep[0]
     fim = sep[2]
-    console.log(inicio + ' a ' + fim)
     d1 = new Date()
     d2 = new Date()
     d1.setFullYear(Number(inicio.split('/')[2]), Number(inicio.split('/')[1]) - 1, Number(inicio.split('/')[0]))

@@ -40,14 +40,14 @@
 
         $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas, Senha)
                                             VALUES (:nome, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas, :senha)");
-        $stmt->bindParam(':nome', $_POST['nome']);
+        $stmt->bindParam(':nome', mb_strtoupper($_POST['nome']));
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':rg', $_POST['rg']);
         $stmt->bindParam(':matricula', $_POST['matricula']);
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':fone', $_POST['fone']);
         $stmt->bindParam(':curso', $_POST['curso']);
-        $stmt->bindParam(':turma', $_POST['turma']);
+        $stmt->bindParam(':turma', mb_strtoupper($_POST['turma']));
         $stmt->bindParam(':anoEntrada', $_POST['anoEntrada']);
         $stmt->bindParam(':nascimento', $_POST['nascimento']);
         $stmt->bindParam(':edital', $_POST['edital']);

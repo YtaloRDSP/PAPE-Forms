@@ -43,8 +43,9 @@
         <div class="form-group"><input class="form-control form-control-sm" type="text" id="fone" name="fone"
             placeholder="Telefone"></div>
         <div class="form-group"><select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso" name="curso">
-            <option value="">Curso</option>
-            <option value="Engenharia de Controle e Automação" selected="">Engenharia de Controle e Automação</option>
+            <option value="" selected="">Curso</option>
+            <option value="Engenharia de Controle e Automação">Engenharia de Controle e Automação</option>
+            <option value="Engenharia de Software">Engenharia de Software</option>
           </select></div>
         <div class="form-group"><input class="form-control form-control-sm" type="text" id="turma"  name="turma"
             placeholder="Turma"></div>
