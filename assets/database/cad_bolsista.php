@@ -1,12 +1,11 @@
 <?php
-
     require('credenciais.php');
     session_start();
 
     try {
         $conn = new PDO("mysql:host=$servername", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "CREATE DATABASE IF NOT EXISTS $database;";
+        $sql = "CREATE DATABASE IF NOT EXISTS $database";
         $conn->exec($sql);
         $conn = null;
 
