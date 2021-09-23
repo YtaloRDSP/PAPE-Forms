@@ -25,7 +25,7 @@
             AnoEntrada VARCHAR(4) NOT NULL,
             Nascimento VARCHAR(10) NOT NULL,
             Edital VARCHAR(3) NOT NULL,
-            Bolsa VARCHAR(3) NOT NULL,
+            Bolsa VARCHAR(4) NOT NULL,
             Procur VARCHAR(4) NOT NULL,
             PeriodoTotal VARCHAR(23) NOT NULL,
             CargaTotal VARCHAR(3) NOT NULL,
