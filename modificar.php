@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-        $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $database = 'PAPE';
-        session_start();
+        require('credenciais.php');
 
         try {
             $email = $_GET['email'];
@@ -16,15 +12,6 @@
             $stmt = $conn->prepare("SELECT Token FROM Bolsistas WHERE Email='$email'");
             $stmt->execute();
             $result = $stmt->fetch();
-            echo $email;
-            echo "<br>";
-            echo "SELECT Token FROM Bolsistas WHERE Email='$email'";
-            echo "<br>";
-            echo "Do GET";
-            echo $token;
-            echo "<br>";
-            echo "Do BD";
-            echo var_dump($result);
             if($token != $result['Token']){
                 echo "<script>
                         alert('Token Invalido')
