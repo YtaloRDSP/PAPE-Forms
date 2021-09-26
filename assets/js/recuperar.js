@@ -34,6 +34,8 @@ function enviar(){
             $("#botao").prop("disabled", false);
         });
     } else{
+        $( "#carregar" ).addClass( "sr-only" )
+        $("#botao").prop("disabled", false);
         alert("Dados incorretos");
     }
 }

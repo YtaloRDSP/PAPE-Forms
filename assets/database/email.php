@@ -20,9 +20,11 @@
         $stmt = $conn->prepare("SELECT * FROM Bolsistas WHERE Email='".$email."'");
         $stmt->execute();
         $result = $stmt->fetch();
+        echo $result;
         if($result){
             $nome = $result['Nome'];
             $token= uniqid();
+            echo $token;
             $stmt = $conn->prepare("UPDATE Bolsistas SET Token='$token' WHERE Email='$email'");
             $stmt->execute();
 
@@ -50,8 +52,8 @@
                             <p>Olá, $nome <br>Recebemos uma solicitação de alteração de senha no Gerador de Relatórios do PAPE em seu nome.<br>
                             Para alterar clique no link abaixo, se não foi você, desconsidere essa mensagem.</p>
                             <a href='http://localhost/PAPE-Forms/PAPE/modificar.php?email=$email&token=$token'>Ir para a página</a>";
-                $mail->AltBody='Apenas um teste';
-
+                $mail->AltBody='Solicitação de Troca de Senha';
+                echo $mail;
                 if($mail->send()){
                     echo 'sucesso';
                 }
