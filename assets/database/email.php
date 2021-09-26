@@ -31,8 +31,6 @@
             
             $mail = new PHPMailer(true);
             
-            echo $token;
-            echo "<br>";
             try{
                 //configuração de servidor
                 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;//habilita debug
@@ -45,8 +43,6 @@
                 
                 $mail->setFrom($usuario, 'PAPE Forms');//quem envia
                 $mail->addAddress($email);//quem recebe
-                echo $nome;
-                echo "<br>";
                 
                 $mail->isHTML(true);
                 $mail->Subject = 'Recuperar Senha';
@@ -60,13 +56,13 @@
                 }
 
             } catch(Exception $e){
-                echo 'Falha de Envio do Email';
+                echo '';
             }
         } else{
             echo "invalido";
         }
     } catch(PDOException $e) {
-        echo 'Falha no Banco de Dados';
+        echo '';
     }
     $conn = null;
 ?>

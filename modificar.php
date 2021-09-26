@@ -16,6 +16,8 @@
             $stmt = $conn->prepare("SELECT Token FROM Bolsistas WHERE Email='".$email."'");
             $stmt->execute();
             $result = $stmt->fetch();
+            echo $token;
+            echo $result['Token'];
             if($token != $result['Token']){
                 echo "<script>
                         alert('Token Invalido')
