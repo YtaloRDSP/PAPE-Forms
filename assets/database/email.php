@@ -26,8 +26,10 @@
             $stmt = $conn->prepare("UPDATE Bolsistas SET Token='$token' WHERE Email='$email'");
             $stmt->execute();
 
-            $usuario = getenv("Usuario");
-            $senha = getenv("Senha");
+            // $usuario = getenv("Usuario");
+            $usuario = "ytalordsp96@gmail.com";
+            // $senha = getenv("Senha");
+            $senha = "Yt@Bl@ke";
 
             $mail = new PHPMailer(true);
 
