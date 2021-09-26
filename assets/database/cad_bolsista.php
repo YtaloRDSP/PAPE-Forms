@@ -34,23 +34,23 @@
         )';
         $conn->exec($sql);
 
-        $nome = mb_strtoupper($_POST['nome']);
+        // $nome = mb_strtoupper($_POST['nome']);
         $senha =password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $cpf = base64_encode($_POST['cpf']);
-        $turma = mb_strtoupper($_POST['turma']);
+        // $turma = mb_strtoupper($_POST['turma']);
 
-        echo $nome, $senha, $cpf, $turma;
+        //echo $nome, $senha, $cpf, $turma;
 
         $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas, Senha)
                                             VALUES (:nome, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas, :senha)");
-        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':nome', $_POST['nome']);
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':rg', $_POST['rg']);
         $stmt->bindParam(':matricula', $_POST['matricula']);
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':fone', $_POST['fone']);
         $stmt->bindParam(':curso', $_POST['curso']);
-        $stmt->bindParam(':turma', $turma);
+        $stmt->bindParam(':turma', $_POST['turma']);
         $stmt->bindParam(':anoEntrada', $_POST['anoEntrada']);
         $stmt->bindParam(':nascimento', $_POST['nascimento']);
         $stmt->bindParam(':edital', $_POST['edital']);
