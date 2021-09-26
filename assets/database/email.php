@@ -22,9 +22,11 @@
         $result = $stmt->fetch();
         if($result){
             $nome = $result['Nome'];
-            echo $nome + ' ';
+            echo $nome;
+            echo "<br>";
             $token= uniqid();
-            echo $token + ' ';
+            echo $token;
+            echo "<br>";
             $stmt = $conn->prepare("UPDATE Bolsistas SET Token='$token' WHERE Email='$email'");
             $stmt->execute();
 
