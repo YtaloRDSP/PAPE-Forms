@@ -3,6 +3,8 @@ function enviar() {
         alert("Nome não Preenchido")
         return
     }
+    document.getElementById("nome").value = document.getElementById("nome").value.toUpperCase()
+    
     if(document.getElementById("cpf").value.length != 14){
         alert("CPF Incompleto")
         return
@@ -31,6 +33,8 @@ function enviar() {
         alert("Turma não Preenchida")
         return
     }
+    document.getElementById("turma").value = document.getElementById("turma").value.toUpperCase()
+
     if(document.getElementById("anoEntrada").value.length != 4){
         alert("Ano de Entrada Incorreto")
         return
