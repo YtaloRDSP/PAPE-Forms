@@ -49,7 +49,7 @@
                 $mail->Body="<h1>Solicitação de Recuperação de Senha - PAPE Forms</h1>
                 <p>Olá, $nome <br>Recebemos uma solicitação de alteração de senha no Gerador de Relatórios do PAPE em seu nome.<br>
                 Para alterar clique no link abaixo, se não foi você, desconsidere essa mensagem.</p>
-                <a href='http://localhost/PAPE-Forms/PAPE/modificar.php?email=$email&token=$token'>Ir para a página</a>";
+                <a href='https://form-pape.herokuapp.com/modificar.php?email=$email&token=$token'>Ir para a página</a>";
                 $mail->AltBody='Solicitação de Troca de Senha';
                 if($mail->send()){
                     echo 'sucesso';
