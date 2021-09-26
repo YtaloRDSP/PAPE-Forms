@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-        require('credenciais.php');
+        require('assets/database/credenciais.php');
 
         try {
             $email = $_GET['email'];
