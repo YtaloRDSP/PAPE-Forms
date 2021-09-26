@@ -13,14 +13,9 @@
 
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT Token FROM Bolsistas WHERE Email='".$email."'");
+            $stmt = $conn->prepare("SELECT Token FROM Bolsistas WHERE Email='$email'");
             $stmt->execute();
             $result = $stmt->fetch();
-            echo $email;
-            echo "Do GET";
-            echo $token;
-            echo "Do BD";
-            echo var_dump($result);
             if($token != $result['Token']){
                 echo "<script>
                         alert('Token Invalido')
