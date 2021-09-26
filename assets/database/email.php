@@ -22,19 +22,17 @@
         $result = $stmt->fetch();
         if($result){
             $nome = $result['Nome'];
-            echo $nome;
-            echo "<br>";
             $token= uniqid();
-            echo $token;
-            echo "<br>";
             $stmt = $conn->prepare("UPDATE Bolsistas SET Token='$token' WHERE Email='$email'");
             $stmt->execute();
-
+            
             $usuario = getenv("Usuario");
             $senha = getenv("Senha");
-
+            
             $mail = new PHPMailer(true);
-
+            
+            echo $token;
+            echo "<br>";
             try{
                 //configuração de servidor
                 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;//habilita debug
@@ -44,18 +42,19 @@
                 $mail->Username=$usuario;
                 $mail->Password=$senha;
                 $mail->Port = 587;
-
+                
                 $mail->setFrom($usuario, 'PAPE Forms');//quem envia
                 $mail->addAddress($email);//quem recebe
-
+                echo $nome;
+                echo "<br>";
+                
                 $mail->isHTML(true);
                 $mail->Subject = 'Recuperar Senha';
                 $mail->Body="<h1>Solicitação de Recuperação de Senha - PAPE Forms</h1>
-                            <p>Olá, $nome <br>Recebemos uma solicitação de alteração de senha no Gerador de Relatórios do PAPE em seu nome.<br>
-                            Para alterar clique no link abaixo, se não foi você, desconsidere essa mensagem.</p>
-                            <a href='http://localhost/PAPE-Forms/PAPE/modificar.php?email=$email&token=$token'>Ir para a página</a>";
+                <p>Olá, $nome <br>Recebemos uma solicitação de alteração de senha no Gerador de Relatórios do PAPE em seu nome.<br>
+                Para alterar clique no link abaixo, se não foi você, desconsidere essa mensagem.</p>
+                <a href='http://localhost/PAPE-Forms/PAPE/modificar.php?email=$email&token=$token'>Ir para a página</a>";
                 $mail->AltBody='Solicitação de Troca de Senha';
-                echo $mail;
                 if($mail->send()){
                     echo 'sucesso';
                 }
