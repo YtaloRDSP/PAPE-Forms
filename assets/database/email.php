@@ -56,13 +56,13 @@
                 }
 
             } catch(Exception $e){
-                echo '';
+                echo 'Falha e-mail';
             }
         } else{
             echo "invalido";
         }
     } catch(PDOException $e) {
-        echo '';
+        echo 'Falha BD';
     }
     $conn = null;
 ?>
