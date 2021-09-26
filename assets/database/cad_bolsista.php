@@ -39,6 +39,8 @@
         $cpf = base64_encode($_POST['cpf']);
         $turma = mb_strtoupper($_POST['turma']);
 
+        echo $nome, $senha, $cpf, $turma;
+
         $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas, Senha)
                                             VALUES (:nome, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas, :senha)");
         $stmt->bindParam(':nome', $nome);
