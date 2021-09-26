@@ -20,11 +20,11 @@
         $stmt = $conn->prepare("SELECT * FROM Bolsistas WHERE Email='".$email."'");
         $stmt->execute();
         $result = $stmt->fetch();
-        echo $result;
         if($result){
             $nome = $result['Nome'];
+            echo $nome + ' ';
             $token= uniqid();
-            echo $token;
+            echo $token + ' ';
             $stmt = $conn->prepare("UPDATE Bolsistas SET Token='$token' WHERE Email='$email'");
             $stmt->execute();
 
@@ -59,13 +59,13 @@
                 }
 
             } catch(Exception $e){
-                echo '';
+                echo 'Falha de Envio do Email';
             }
         } else{
             echo "invalido";
         }
     } catch(PDOException $e) {
-        echo '';
+        echo 'Falha no Banco de Dados';
     }
     $conn = null;
 ?>
