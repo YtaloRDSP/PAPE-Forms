@@ -37,8 +37,9 @@
       <div id="plano">
         <div class="form-group"><select class="form-control" id="tutor" style="color: #6f7a85;">
             <option value="" selected="" disabled="disabled">Escolha o Tutor</option>
+            <option value="Jeanne">Jeanne Moreira de Sousa</option>
             <option value="Jose">José Carlos Ferreira Souza</option>
-            <option value="2">Luana Monteiro da Silva</option>
+            <option value="Luana">Luana Monteiro da Silva</option>
           </select></div>
       </div>
       <div id="relatorio">
