@@ -130,7 +130,7 @@ function geraDoc() {
                             edital: pack['Edital'],
                             proc: pack['Procur'],
                             periodoTotal: pack['PeriodoTotal'],
-                            vigencia: pack['Parcelas'] + ' meses',
+                            vigencia: pack['Parcelas'],
                             curso: pack['Curso'],
                             turma: pack['Turma'],
                             anoEntrada: pack['AnoEntrada'],
