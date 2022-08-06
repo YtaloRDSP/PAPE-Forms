@@ -13,6 +13,7 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = 'CREATE TABLE IF NOT EXISTS Bolsistas (
             ID INT PRIMARY KEY AUTO_INCREMENT,
+            Sub VARCHAR(100) NOT NULL UNIQUE,
             Nome VARCHAR(100) NOT NULL,
             CPF VARCHAR(150) NOT NULL UNIQUE,
             RG VARCHAR(15) NOT NULL,
@@ -28,18 +29,16 @@
             Procur VARCHAR(4) NOT NULL,
             PeriodoTotal VARCHAR(23) NOT NULL,
             CargaTotal VARCHAR(3) NOT NULL,
-            Parcelas VARCHAR(1) NOT NULL,
-            Senha VARCHAR(150) NOT NULL,
-            Token VARCHAR(150)
+            Parcelas VARCHAR(1) NOT NULL
         )';
         $conn->exec($sql);
 
-        $senha =password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $cpf = base64_encode($_POST['cpf']);
 
-        $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas, Senha)
-                                            VALUES (:nome, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas, :senha)");
+        $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, Sub, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas)
+                                            VALUES (:nome, :sub, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas)");
         $stmt->bindParam(':nome', $_POST['nome']);
+        $stmt->bindParam(':sub', $_POST['sub']);
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':rg', $_POST['rg']);
         $stmt->bindParam(':matricula', $_POST['matricula']);
@@ -55,11 +54,10 @@
         $stmt->bindParam(':periodototal', $_POST['vigencia']);
         $stmt->bindParam(':cargatotal', $_POST['ch']);
         $stmt->bindParam(':parcelas', $_POST['parcelas']);
-        $stmt->bindParam(':senha', $senha);
         $stmt->execute();
 
         echo '<script> alert("Dados Cadastrados com Sucesso!")</script>';
-        echo '<script> location = "../../index.php";</script>';
+        echo '<script> location = "/";</script>';
 
     } catch(PDOException $e) {
         echo $sql . '<br>' . $e->getMessage();

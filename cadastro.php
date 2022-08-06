@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+  var post_sub = "<?=$_POST['sub']?>"
+  var post_email = "<?=$_POST['email']?>"
+  var post_nome = "<?=$_POST['nome']?>"
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -30,52 +36,65 @@
       <div>
         <div class="text-center" id="alerta"></div>
         <hr style="color: var(--gray);border-color: var(--gray);">
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="nome" name="nome"
-            placeholder="Nome Completo"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="cpf" name="cpf" placeholder="CPF">
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="nome" name="nome" placeholder="Nome Completo">
         </div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="rg" name="rg" placeholder="RG">
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="cpf" name="cpf" placeholder="CPF">
         </div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="matricula" name="matricula"
-            placeholder="Matricula"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="email" id="email" name="email"
-            placeholder="E-mail"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="fone" name="fone"
-            placeholder="Telefone"></div>
-        <div class="form-group"><select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso" name="curso">
-            <option value="" selected="">Curso</option>
-            <option value="Engenharia de Controle e Automação">Engenharia de Controle e Automação</option>
-            <option value="Engenharia de Software">Engenharia de Software</option>
-          </select></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="turma"  name="turma"
-            placeholder="Turma"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="anoEntrada" name="anoEntrada"
-            placeholder="Ano de Entrada"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="nascimento" name="nascimento"
-            placeholder="Data de Nascimento"></div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="rg" name="rg" placeholder="RG">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="matricula" name="matricula" placeholder="Matricula">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="email" id="email" name="email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="fone" name="fone" placeholder="Telefone">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="turma"  name="turma" placeholder="Turma">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="anoEntrada" name="anoEntrada" placeholder="Ano de Entrada">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="nascimento" name="nascimento" placeholder="Data de Nascimento">
+        </div>
         <hr style="border-color: var(--secondary);">
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="edital" name="edital"
-            placeholder="Número do Edital"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="bolsa" name="bolsa"
-            placeholder="Número do Termo de Bolsa"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="proc" name="proc"
-            placeholder="Número de Proc."></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="vigencia" name="vigencia"
-            placeholder="Vigência do Contrato"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="ch" name="ch"
-            placeholder="Carga Horária"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="text" id="parcelas" name="parcelas"
-            placeholder="Parcelas"></div>
-        <hr style="border-color: var(--secondary);">
-        <div class="form-group"><input class="form-control form-control-sm" type="password" id="senha" name="senha"
-            placeholder="Insira sua Senha"></div>
-        <div class="form-group"><input class="form-control form-control-sm" type="password" id="validaSenha"
-            placeholder="Repita a senha anterior"></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" type="button" onclick="enviar()">Cadastrar Bolsista</button>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="edital" name="edital" placeholder="Número do Edital">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="bolsa" name="bolsa" placeholder="Número do Termo de Bolsa">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="proc" name="proc" placeholder="Número de Proc.">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="vigencia" name="vigencia" placeholder="Vigência do Contrato">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="ch" name="ch" placeholder="Carga Horária">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="parcelas" name="parcelas" placeholder="Parcelas">
+        </div>
+        <div class="form-group sr-only">
+          <input class="form-control form-control-sm" type="text" id="sub" name="sub">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="button" onclick="enviar()">Cadastrar Bolsista</button>
         </div>
       </div>
     </form>
   </section>
+
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -94,6 +113,13 @@
       $('#ch').mask('000')
       $('#parcelas').mask('0')
     });
+
+    document.getElementById("sub").value = post_sub
+    document.getElementById("email").value = post_email
+    document.getElementById("nome").value = post_nome
+    // sub.value = post_sub
+    // email.value = post_email
+    // nome.value = post_nome
   </script>
 </body>
 

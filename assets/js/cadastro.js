@@ -67,10 +67,10 @@ function enviar() {
         alert("Número de Parcelas não Informado")
         return
     }
-    conf = (document.getElementById("senha").value == document.getElementById("validaSenha").value)
-    if (conf && document.getElementById("senha").value != '') {
-        document.getElementById("form").submit()
-    } else {
-        alert("Digite ambos os campos de senha igualmente!")
+    if(document.getElementById("sub").value == ''){
+        alert("Autenticação Google apresentou falha")
+        return
     }
+    document.getElementById("form").submit()
+    return
 }
