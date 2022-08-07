@@ -45,7 +45,7 @@
             <option value="" selected="" disabled="disabled">Escolha o Tutor</option>
             <option value="Jeanne">Jeanne Moreira de Sousa</option>
             <option value="Jose">José Carlos Ferreira Souza</option>
-            <option value="Luana">Luana Monteiro da Silva</option>
+            <option value="Micheli">Michéli Carolíni de Deus Lima Schwade</option>
           </select></div>
       </div>
       <div id="relatorio">
