@@ -24,7 +24,7 @@ function geraDoc() {
 
     if (document.getElementById('doc').value == 'plano') {
         tutor = document.getElementById('tutor').value
-        if ((senha == '' || tutor == '')) {
+        if (tutor == '') {
             alert("Preencha todos os itens")
             $( "#carregar" ).addClass( "sr-only" )
             $("#botao").prop("disabled", false);
@@ -36,15 +36,11 @@ function geraDoc() {
 
     var envio = new XMLHttpRequest();
     envio.onreadystatechange = function() {
-        console.log("Teste")
         if (this.readyState == 4 && this.status == 200) {
-
             if (this.responseText == '') {
                 alert("Dados Inválidos!")
             } else {
-                console.log(this.responseText)
                 pack = JSON.parse(this.responseText)
-                console.log(pack)
                 now = new Date
                 if (document.getElementById('doc').value == 'plano') {
                     arquivo = "assets/word/plano" + tutor + pack['Parcelas'] + ".docx"
