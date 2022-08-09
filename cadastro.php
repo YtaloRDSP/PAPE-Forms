@@ -58,6 +58,14 @@
           <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
         </div>
         <div class="form-group">
+          <input class="form-control form-control-sm" type="text" id="curso_fic" name="curso_fic" placeholder="Curso FIC" value="Engenharia de Controle e Automação">
+          <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
+            <option value="" selected="">Curso FIC</option>
+            <option value="Fundamentos de SQL">Fundamentos de SQL</option>
+            <option value="Programação para Dispositivos Móveis Avançada">Programação para Dispositivos Móveis Avançada</option>
+          </select>
+        </div>
+        <div class="form-group">
           <input class="form-control form-control-sm" type="text" id="turma"  name="turma" placeholder="Turma">
         </div>
         <div class="form-group">
@@ -67,6 +75,13 @@
           <input class="form-control form-control-sm" type="text" id="nascimento" name="nascimento" placeholder="Data de Nascimento">
         </div>
         <hr style="border-color: var(--secondary);">
+        <div class="form-group">
+          <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="edital" name="edital">
+            <option value="" selected="">Edital</option>
+            <option value="027">027 - Chamada Regular</option>
+            <option value="031">031 - Vagas Remanescentes</option>
+          </select>
+        </div>
         <div class="form-group">
           <input class="form-control form-control-sm" type="text" id="edital" name="edital" placeholder="Número do Edital">
         </div>
