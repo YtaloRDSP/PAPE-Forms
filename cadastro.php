@@ -55,11 +55,11 @@
           <input class="form-control form-control-sm" type="text" id="fone" name="fone" placeholder="Telefone">
         </div>
         <div class="form-group">
-          <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
+          <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação" disabled>
         </div>
         <div class="form-group">
           <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
-            <option value="" selected="">Curso FIC</option>
+            <option value="" selected>Curso FIC</option>
             <option value="Fundamentos de SQL">Fundamentos de SQL</option>
             <option value="Programação para Dispositivos Móveis Avançada">Programação para Dispositivos Móveis Avançada</option>
           </select>
@@ -76,7 +76,7 @@
         <hr style="border-color: var(--secondary);">
         <div class="form-group">
           <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="edital" name="edital">
-            <option value="" selected="">Edital</option>
+            <option value="" selected>Edital</option>
             <option value="027">027 - Chamada Regular</option>
             <option value="031">031 - Vagas Remanescentes</option>
           </select>
@@ -120,7 +120,6 @@
       $('#fone').mask('(00) 00000-0000')
       $('#anoEntrada').mask('0000')
       $('#nascimento').mask('00/00/0000')
-      $('#edital').mask('000')
       $('#bolsa').mask('0000')
       $('#proc').mask('0000')
       $('#vigencia').mask('00/00/0000 a 00/00/0000')
