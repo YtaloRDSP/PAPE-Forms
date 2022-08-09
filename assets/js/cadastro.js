@@ -29,6 +29,10 @@ function enviar() {
         alert("Curso não Preenchido")
         return
     }
+    if(document.getElementById("curso_fic").value == ''){
+        alert("Curso não Preenchido")
+        return
+    }
     if(document.getElementById("turma").value == ''){
         alert("Turma não Preenchida")
         return

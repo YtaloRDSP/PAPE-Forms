@@ -113,6 +113,7 @@ function geraDoc() {
                             parcela: parcela,
                             periodoMensal: periodoMensal,
                             chMensal: chMensal,
+                            cursos_fic: pack['CursoFIC'],
 
                             inicio: dts[0],
                             sabados: dts[1],
@@ -137,7 +138,8 @@ function geraDoc() {
                             turma: pack['Turma'],
                             anoEntrada: pack['AnoEntrada'],
                             matricula: pack['Matricula'],
-                            nasc: pack['Nascimento']
+                            nasc: pack['Nascimento'],
+                            cursos_fic: pack['CursoFIC']
                         });
                     }
                     try {
