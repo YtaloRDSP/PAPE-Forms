@@ -82,9 +82,6 @@
           </select>
         </div>
         <div class="form-group">
-          <input class="form-control form-control-sm" type="text" id="edital" name="edital" placeholder="Número do Edital">
-        </div>
-        <div class="form-group">
           <input class="form-control form-control-sm" type="text" id="bolsa" name="bolsa" placeholder="Número do Termo de Bolsa">
         </div>
         <div class="form-group">
