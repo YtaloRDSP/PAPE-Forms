@@ -58,7 +58,6 @@
           <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
         </div>
         <div class="form-group">
-          <input class="form-control form-control-sm" type="text" id="curso_fic" name="curso_fic" placeholder="Curso FIC" value="Engenharia de Controle e Automação">
           <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
             <option value="" selected="">Curso FIC</option>
             <option value="Fundamentos de SQL">Fundamentos de SQL</option>
