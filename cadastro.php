@@ -55,7 +55,7 @@
           <input class="form-control form-control-sm" type="text" id="fone" name="fone" placeholder="Telefone">
         </div>
         <div class="form-group">
-          <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação" disabled>
+          <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
         </div>
         <div class="form-group">
           <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
