@@ -21,6 +21,7 @@
             Email VARCHAR(100) NOT NULL UNIQUE,
             Fone VARCHAR(20) NOT NULL,
             Curso VARCHAR(100) NOT NULL,
+            CursoFIC VARCHAR(100) NOT NULL
             Turma VARCHAR(10) NOT NULL,
             AnoEntrada VARCHAR(4) NOT NULL,
             Nascimento VARCHAR(10) NOT NULL,
@@ -35,8 +36,8 @@
 
         $cpf = base64_encode($_POST['cpf']);
 
-        $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, Sub, CPF, RG, Matricula, Email, Fone, Curso, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas)
-                                            VALUES (:nome, :sub, :cpf, :rg, :matricula, :email, :fone, :curso, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas)");
+        $stmt = $conn->prepare("INSERT INTO Bolsistas (Nome, Sub, CPF, RG, Matricula, Email, Fone, Curso, CursoFIC, Turma, AnoEntrada, Nascimento, Edital, Bolsa, Procur, PeriodoTotal, CargaTotal, Parcelas)
+                                            VALUES (:nome, :sub, :cpf, :rg, :matricula, :email, :fone, :curso, :cursofic, :turma, :anoEntrada, :nascimento, :edital, :bolsa, :procur, :periodototal, :cargatotal, :parcelas)");
         $stmt->bindParam(':nome', $_POST['nome']);
         $stmt->bindParam(':sub', $_POST['sub']);
         $stmt->bindParam(':cpf', $cpf);
@@ -45,6 +46,7 @@
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':fone', $_POST['fone']);
         $stmt->bindParam(':curso', $_POST['curso']);
+        $stmt->bindParam(':cursofic', $_POST['curso_fic']);
         $stmt->bindParam(':turma', $_POST['turma']);
         $stmt->bindParam(':anoEntrada', $_POST['anoEntrada']);
         $stmt->bindParam(':nascimento', $_POST['nascimento']);
