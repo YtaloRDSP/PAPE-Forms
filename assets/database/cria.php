@@ -21,7 +21,7 @@
             Email VARCHAR(100) NOT NULL UNIQUE,
             Fone VARCHAR(20) NOT NULL,
             Curso VARCHAR(100) NOT NULL,
-            CursoFIC VARCHAR(100) NOT NULL
+            CursoFIC VARCHAR(100) NOT NULL,
             Turma VARCHAR(10) NOT NULL,
             AnoEntrada VARCHAR(4) NOT NULL,
             Nascimento VARCHAR(10) NOT NULL,
