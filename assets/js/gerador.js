@@ -41,6 +41,7 @@ function geraDoc() {
                 alert("Dados Inválidos!")
             } else {
                 pack = JSON.parse(this.responseText)
+                console.log(pack)
                 now = new Date
                 if (document.getElementById('doc').value == 'plano') {
                     arquivo = "assets/word/plano" + tutor + pack['Parcelas'] + ".docx"
@@ -113,7 +114,7 @@ function geraDoc() {
                             parcela: parcela,
                             periodoMensal: periodoMensal,
                             chMensal: chMensal,
-                            cursos_fic: pack['CursoFIC'],
+                            cursoFIC: pack['CursoFIC'],
 
                             inicio: dts[0],
                             sabados: dts[1],
@@ -139,7 +140,7 @@ function geraDoc() {
                             anoEntrada: pack['AnoEntrada'],
                             matricula: pack['Matricula'],
                             nasc: pack['Nascimento'],
-                            cursos_fic: pack['CursoFIC']
+                            cursoFIC: pack['CursoFIC']
                         });
                     }
                     try {
@@ -148,7 +149,7 @@ function geraDoc() {
                         errorHandler(error);
                     }
 
-                    var out = doc.getZip().generate({
+                    var out = doc.getZip(3).generate({
                         type: "blob",
                         mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     })
