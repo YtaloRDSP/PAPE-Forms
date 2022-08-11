@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
           <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
-            <option value="" selected>Curso FIC</option>
+            <option value="" selected=''>Curso FIC</option>
             <option value="Fundamentos de SQL">Fundamentos de SQL</option>
             <option value="Programação para Dispositivos Móveis Avançada">Programação para Dispositivos Móveis Avançada</option>
           </select>
@@ -75,8 +75,8 @@
         </div>
         <hr style="border-color: var(--secondary);">
         <div class="form-group">
-          <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="edital" name="edital">
-            <option value="" selected>Edital</option>
+          <select class="form-control" style="color: #ffffff;font-size: 14px;" id="edital" name="edital">
+            <option value="" selected=''>Edital</option>
             <option value="027">027 - Chamada Regular</option>
             <option value="031">031 - Vagas Remanescentes</option>
           </select>
@@ -113,7 +113,7 @@
     $(document).ready(function() {
       $('#cpf').mask('000.000.000-00')
       $('#rg').mask('000000000000')
-      $('#matricula').mask('0000000000')
+      $('#matricula').mask('000000000000000')
       $('#fone').mask('(00) 00000-0000')
       $('#anoEntrada').mask('0000')
       $('#nascimento').mask('00/00/0000')
