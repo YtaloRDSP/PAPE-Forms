@@ -58,10 +58,10 @@
           <input class="form-control form-control-sm" type="text" id="curso" name="curso" placeholder="Curso" value="Engenharia de Controle e Automação">
         </div>
         <div class="form-group">
-          <select class="form-control" style="color: #6f7a85;font-size: 14px;" id="curso_fic" name="curso_fic">
-            <option value="" selected=''>Curso FIC</option>
-            <option value="Fundamentos de SQL">Fundamentos de SQL</option>
-            <option value="Programação para Dispositivos Móveis Avançada">Programação para Dispositivos Móveis Avançada</option>
+          <select class="form-control" style="color: #ffffff;font-size: 14px;" id="curso_fic" name="curso_fic">
+            <option value="" style="color: #6f7a85;font-size: 14px;" selected=''>Curso FIC</option>
+            <option value="Fundamentos de SQL" style="color: #6f7a85;font-size: 14px;">Fundamentos de SQL</option>
+            <option value="Programação para Dispositivos Móveis Avançada" style="color: #6f7a85;font-size: 14px;">Programação para Dispositivos Móveis Avançada</option>
           </select>
         </div>
         <div class="form-group">
@@ -76,9 +76,9 @@
         <hr style="border-color: var(--secondary);">
         <div class="form-group">
           <select class="form-control" style="color: #ffffff;font-size: 14px;" id="edital" name="edital">
-            <option value="" selected=''>Edital</option>
-            <option value="027">027 - Chamada Regular</option>
-            <option value="031">031 - Vagas Remanescentes</option>
+            <option value="" style="color: #6f7a85;font-size: 14px;" selected=''>Edital</option>
+            <option value="027" style="color: #6f7a85;font-size: 14px;">027 - Chamada Regular</option>
+            <option value="031" style="color: #6f7a85;font-size: 14px;">031 - Vagas Remanescentes</option>
           </select>
         </div>
         <div class="form-group">
